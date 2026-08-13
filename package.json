@@ -1,0 +1,46 @@
+{
+  "name": "@nightboy/js-utils-lite",
+  "version": "1.0.1",
+  "description": "A lightweight JavaScript utility library for common frontend and Node.js tasks.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./src/index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./src/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "src",
+    "dist",
+    "index.d.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "test": "node --test",
+    "pack:check": "npm pack --dry-run",
+    "prepublishOnly": "npm test && npm run pack:check"
+  },
+  "keywords": [
+    "javascript",
+    "utils",
+    "utility",
+    "debounce",
+    "throttle",
+    "deep-clone"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  }
+}

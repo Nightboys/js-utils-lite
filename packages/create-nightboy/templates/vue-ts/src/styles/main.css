@@ -1,0 +1,245 @@
+:root {
+  color: #18201c;
+  background: #f4f6f4;
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --surface: #ffffff;
+  --border: #d9dedb;
+  --muted: #66706a;
+  --primary: #176b4d;
+  --primary-hover: #11563e;
+  --accent: #c27a18;
+  --danger: #b42318;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+button,
+a {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+}
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.app-shell {
+  min-height: 100vh;
+}
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 64px;
+  padding: 0 32px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+.brand,
+.panel-heading,
+.button-row,
+.status-line,
+.primary-button,
+.secondary-button {
+  display: flex;
+  align-items: center;
+}
+.brand {
+  gap: 10px;
+  font-weight: 700;
+}
+.brand-mark,
+.icon-box {
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  color: #ffffff;
+  background: var(--primary);
+}
+.icon-box.accent {
+  background: var(--accent);
+}
+nav a {
+  color: var(--muted);
+  font-size: 14px;
+}
+nav a.router-link-active {
+  color: var(--primary);
+  font-weight: 600;
+}
+.page-container {
+  width: min(1080px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 64px 0;
+}
+.page-heading {
+  max-width: 680px;
+  margin-bottom: 36px;
+}
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+h1 {
+  margin-bottom: 14px;
+  font-size: 38px;
+  line-height: 1.15;
+}
+h2 {
+  margin-bottom: 4px;
+  font-size: 18px;
+}
+.page-heading > p:last-child,
+.panel-heading p,
+.empty-state > p {
+  color: var(--muted);
+  line-height: 1.65;
+}
+.panel-heading p {
+  margin-bottom: 0;
+  font-size: 14px;
+}
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+.panel {
+  min-height: 250px;
+  padding: 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.panel-heading {
+  gap: 12px;
+}
+.metric {
+  margin: 34px 0;
+  font-size: 52px;
+  font-weight: 700;
+}
+.button-row {
+  gap: 10px;
+}
+.primary-button,
+.secondary-button,
+.icon-button {
+  min-height: 40px;
+  border-radius: 6px;
+}
+.primary-button,
+.secondary-button {
+  justify-content: center;
+  gap: 8px;
+  padding: 0 16px;
+  font-weight: 600;
+}
+.primary-button {
+  color: #ffffff;
+  background: var(--primary);
+  border: 1px solid var(--primary);
+}
+.primary-button:hover {
+  background: var(--primary-hover);
+}
+.secondary-button {
+  color: var(--primary);
+  background: #ffffff;
+  border: 1px solid var(--primary);
+}
+.secondary-button:hover:not(:disabled) {
+  color: #ffffff;
+  background: var(--primary);
+}
+.icon-button {
+  display: inline-grid;
+  place-items: center;
+  width: 40px;
+  color: var(--muted);
+  background: #ffffff;
+  border: 1px solid var(--border);
+}
+.primary-button,
+.secondary-button,
+.icon-button,
+nav a {
+  transition:
+    color 160ms ease,
+    background-color 160ms ease,
+    border-color 160ms ease;
+}
+.status-line {
+  gap: 8px;
+  min-height: 52px;
+  margin: 34px 0;
+  padding: 0 14px;
+  color: var(--muted);
+  background: #f7f8f7;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+.status-line[data-tone='success'] {
+  color: var(--primary);
+  border-color: #8fc7af;
+}
+.status-line[data-tone='error'] {
+  color: var(--danger);
+  border-color: #efaaa4;
+}
+.empty-state {
+  max-width: 560px;
+  padding-top: 80px;
+}
+.empty-state .primary-button {
+  width: fit-content;
+}
+
+@media (max-width: 700px) {
+  .topbar {
+    padding: 0 20px;
+  }
+  .brand > span:last-child {
+    display: none;
+  }
+  .page-container {
+    width: min(100% - 32px, 1080px);
+    padding: 40px 0;
+  }
+  h1 {
+    font-size: 32px;
+  }
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}

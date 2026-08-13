@@ -76,3 +76,13 @@ npm publish
 ```
 
 如果要改包名，请先修改 `package.json` 中的 `name` 字段，再执行发布。
+
+## 项目脚手架
+
+当前仓库同时维护独立 npm 包 [`create-nightboy`](./packages/create-nightboy/README.md)，用于交互式生成 Vue、React、Node.js 和 TypeScript 工具库项目。
+
+```bash
+npm create nightboy@latest
+```
+
+脚手架拥有独立的包清单、依赖、测试和发布流程，不会进入 `@nightboy/js-utils-lite` 的发布内容。

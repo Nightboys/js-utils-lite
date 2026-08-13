@@ -1,0 +1,48 @@
+{
+  "name": "create-nightboy",
+  "version": "0.1.0",
+  "description": "Create business-ready Vue, React, Node.js, and TypeScript library projects.",
+  "type": "module",
+  "bin": {
+    "create-nightboy": "./bin/create-nightboy.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "templates",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test test",
+    "format": "prettier --write \"bin/**/*.js\" \"src/**/*.js\" \"test/**/*.js\" \"templates/**/*.{js,jsx,ts,tsx,vue,css,json,md,html}\" README.md",
+    "format:check": "prettier --check \"bin/**/*.js\" \"src/**/*.js\" \"test/**/*.js\" \"templates/**/*.{js,jsx,ts,tsx,vue,css,json,md,html}\" README.md",
+    "pack:check": "npm pack --dry-run",
+    "prepublishOnly": "npm test && npm run pack:check"
+  },
+  "keywords": [
+    "create",
+    "scaffold",
+    "vite",
+    "vue",
+    "react",
+    "express",
+    "typescript"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "7.10.1",
+    "commander": "12.1.0",
+    "picocolors": "1.1.1"
+  },
+  "devDependencies": {
+    "prettier": "3.6.2"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  }
+}
